@@ -1,0 +1,343 @@
+/* 노멀라이즈 */
+* {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+/* =========탑바======== */
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 24px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1 {
+  margin: 0 auto;
+}
+/* logo 버튼  */
+button {
+  border: none;
+  background-color: #f7f3f2;
+  width: 350px;
+}
+header {
+  height: auto;
+  /*   border: 2px solid red; */
+  position: relative;
+}
+header > .container {
+  /*   border: 2px solid orange; */
+  /*
+	그리드
+	양 옆 여백 값 : 20px
+	요소와 요소사이에 여백: 40px
+	*/
+  width: 1920px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  /* 
+	top-bar__left-box와 top-bar__right-box를 한줄에 같이
+	나오게 하는 용도
+	*/
+}
+header > .container > .top-bar__left-box {
+  /*   border: 2px solid indigo; */
+  flex-grow: 1;
+  flex-basis: 0;
+  /* height: 40px; */
+  display: flex;
+  /* h1과, svg를 한줄에 같이 놓기위한 코드 */
+  /* 	align-items: center; */
+}
+header > .container > .top-bar__left-box > h1 {
+  /* margin-right: 10px; */
+  /*   border: 2px solid yellow; */
+  display: flex;
+  width: 280px;
+}
+header > .container > .top-bar__left-box > h1 > svg {
+  width: 200px;
+  /* 	background-color: red; */
+}
+header > .container > .top-bar__left-box > nav {
+  /*   border: 2px solid yellow; */
+}
+/* nav에 마우스를 올렸을때 자식인 .menu-2가 나온다. */
+header > .container > .top-bar__left-box > nav:hover > .menu-2 {
+  display: block;
+}
+header > .container > .top-bar__left-box > nav > ul {
+  display: flex;
+}
+header > .container > .top-bar__left-box > nav > ul > li {
+  margin-left: 10px;
+  margin-right: 10px;
+  /*   border: 1px solid blue; */
+  width: 140px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2차메뉴 */
+header > .container > .top-bar__left-box > nav > .menu-2 {
+  /*   border: 1px solid red; */
+  /* position: absolute;
+  height: 300px;
+  left: 0;
+  top: 100%;
+  width: 100%; */
+  display: none;
+}
+
+/* 오른쪽바 */
+header > .container > .top-bar__right-box {
+  /* border: 2px solid indigo; */
+  /* flex-> container임 */
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  /* move-text와 icon-box를 한줄에 같이 나오게하기 위한 코드	 */
+  /* align-items: center; -> container여서 item아니여서 사용x */
+  justify-content: flex-end;
+}
+
+/* hover하면 3차메뉴바 나옴 */
+header > .container > .top-bar__right-box > nav:hover > .menu-3 {
+  display: block;
+}
+header > .container > .top-bar__right-box > .all-menubar:hover > nav > .menu-3 {
+  display: block;
+}
+
+/* 3차메뉴 */
+header > .container > .top-bar__right-box > .all-menubar > nav > .menu-3 {
+  /*   border: 1px solid red; */
+  position: absolute;
+  height: 500px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: none;
+  /* min-width: var(--site-width); */
+}
+header
+  > .container
+  > .top-bar__right-box
+  > .all-menubar
+  > nav
+  > .menu-3
+  > .container {
+  width: 1920px;
+  /* border: 2px solid orange; */
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  /* width: var(--site-width); */
+}
+header
+  > .container
+  > .top-bar__right-box
+  > .all-menubar
+  > nav
+  > .menu-3
+  > .container::before {
+  content: "";
+  width: 913px;
+  height: 500px;
+
+  /* border: 2px solid yellow; */
+}
+header
+  > .container
+  > .top-bar__right-box
+  > .all-menubar
+  > nav
+  > .menu-3
+  > .container
+  > nav {
+  /*
+	flex-item이기 때문에 width가 auto일때 0으로 작동된다.
+	flex-item은 넓이가 최소화 된다는 특징을 가지고있기 때문이다
+	*/
+  width: 940px;
+  display: flex;
+  background-color: rgba(248, 242, 224, 0.8);
+  border: none;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  margin-top: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: flex-end;
+}
+header
+  > .container
+  > .top-bar__right-box
+  > .all-menubar
+  > nav
+  > .menu-3
+  > .container
+  > nav
+  > ul {
+  width: 240px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  /* background-size: 20px; */
+  /* border: 1px solid blue; */
+}
+header
+  > .container
+  > .top-bar__right-box
+  > .all-menubar
+  > nav
+  > .menu-3
+  > .container
+  > nav
+  > ul
+  > li {
+  /* border: 1px solid indigo; */
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+header
+  > .container
+  > .top-bar__right-box
+  > .all-menubar
+  > nav
+  > .menu-3
+  > .container
+  > nav
+  > ul
+  > li
+  > a {
+  /* background-color: #dedede; */
+  /* border: 1px solid blue; */
+}
+
+header > .container > .top-bar__right-box > .all-menubar {
+  /* border: 1px solid yellow; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header > .container > .top-bar__right-box > .all-menubar > .all-menubar-hover {
+  /* border: 1px solid orange; */
+  display: flex;
+}
+
+/* 전체메뉴바 조절 */
+header
+  > .container
+  > .top-bar__right-box
+  > .all-menubar
+  > .all-menubar-hover
+  > a
+  > img {
+  width: 60px;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+/* 모든 메뉴를 마우스 인식 시 배경색을 변경 */
+.all-menubar ul > li:hover > a {
+  background-color: rgb(252, 241, 178, 0.5);
+  border-radius: 10px;
+  padding: 15px 10px 15px 10px;
+}
+
+/* 2차 메뉴가 보이도록 만들어 보자 */
+.all-menubar ul > li:hover > ul {
+  display: block;
+}
+
+/* icon */
+header > .container > .top-bar__right-box > .icon-box {
+  /* border: 2px solid yellow; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* display: flex; 적용해야 align-items: center; 작동가능 */
+header > .container > .top-bar__right-box > .icon-box > a > img {
+  margin-left: 10px;
+  width: 60px;
+  vertical-align: bottom;
+}
+
+body {
+  /* border: 2px solid red; */
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* font-size: 25px; */
+  /* font-weight: 500; */
+  color: #000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-image: url("https://www.hyundai.com/contents/mainbanner/car-bg-w.jpg");
+}
+
+swiper-container {
+  /* border: 1px solid black; */
+  /* width: 100%;
+  height: 100%; */
+  width: 1920px;
+  height: 850px;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  transform: translateY(50%, -50%);
+}
+
+swiper-slide {
+  /* background-position: center; */
+  /* background-size: cover; */
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+swiper-container > swiper-slide > .car-img {
+  border: 1px solid red;
+}
+swiper-container > swiper-slide > .car-img > a {
+  border: 1px solid blue;
+}
+swiper-container > swiper-slide > .car-img > a > img {
+  border: 1px solid yellow;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
